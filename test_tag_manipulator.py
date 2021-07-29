@@ -108,3 +108,19 @@ def test_split_space_at_start():
 
     # assert
     assert result == expResult
+
+
+def test_split_tokens_with_spaces():
+    # arrange
+    stringToSplit = "java byte code, python"
+    regex = ","
+    expResult = ["java byte code", "python"]
+    result = None
+    cut = TagManipulator()
+
+    # act
+    result = cut.parse_string(stringToSplit, regex)
+    print(result)
+
+    # assert
+    assert result == expResult
